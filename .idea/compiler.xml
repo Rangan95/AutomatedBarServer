@@ -9,5 +9,8 @@
         <module name="automatedbarserver" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="automatedbarserver" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

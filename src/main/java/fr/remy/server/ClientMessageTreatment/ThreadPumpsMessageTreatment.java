@@ -1,30 +1,17 @@
-package server.ClientMessageTreatment;
+package fr.remy.server.ClientMessageTreatment;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-import gpio.Pump;
+import fr.remy.gpio.Pump;
 
-/**
- * The treatment of a message begin with PUMPS_WITH_THREAD
- */
 public class ThreadPumpsMessageTreatment {
 
     private String clientPumpsWithThreadMessage;
 
-    /**
-     * The constructor of the class
-     *
-     * @param clientPumpsWithThreadMessage the client message for this class
-     */
     public ThreadPumpsMessageTreatment(String clientPumpsWithThreadMessage) {
         this.clientPumpsWithThreadMessage = clientPumpsWithThreadMessage;
     }
 
-    /**
-     * Parse the client message and run pump into a thread
-     *
-     * @return the response to client
-     */
     public String run () {
         String[] pumpInfos = clientPumpsWithThreadMessage.split(" ");
         GpioController gpio = GpioFactory.getInstance();
@@ -45,7 +32,9 @@ public class ThreadPumpsMessageTreatment {
             cptThread++;
         }
 
-        int i = 0; while (i < (pumpInfos.length - 1) / 2) {
+        int i = 0;
+
+        while (i < (pumpInfos.length - 1) / 2) {
             while (threads[i].isAlive()) {}
             i++;
         }

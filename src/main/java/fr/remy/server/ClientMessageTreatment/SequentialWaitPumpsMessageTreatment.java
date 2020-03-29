@@ -1,30 +1,17 @@
-package server.ClientMessageTreatment;
+package fr.remy.server.ClientMessageTreatment;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
-import gpio.Pump;
+import fr.remy.gpio.Pump;
 
-/**
- * The treatment of a message begin with PUMPS_SEQUENTIAL_WITH_WAIT
- */
 public class SequentialWaitPumpsMessageTreatment {
 
     private String clientSequentialWaitPumpsMessage;
 
-    /**
-     * The constructor of the class
-     *
-     * @param clientSequentialWaitPumpsMessage the client message for this class
-     */
     public SequentialWaitPumpsMessageTreatment(String clientSequentialWaitPumpsMessage) {
         this.clientSequentialWaitPumpsMessage = clientSequentialWaitPumpsMessage;
     }
 
-    /**
-     * The main method of SequentialWaitPump
-     *
-     * @return the return message to the client
-     */
     public String run () {
         String[] pumpInfos = clientSequentialWaitPumpsMessage.split(" ");
         GpioController gpio = GpioFactory.getInstance();

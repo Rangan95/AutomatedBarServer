@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="automatedbarserver:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/automatedbarserver_jar</output-path>
+    <root id="archive" name="automatedbarserver.jar">
+      <element id="module-output" name="automatedbarserver" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/pi4j-core-1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

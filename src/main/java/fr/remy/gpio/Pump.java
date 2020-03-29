@@ -1,4 +1,4 @@
-package gpio;
+package fr.remy.gpio;
 
 import com.pi4j.io.gpio.*;
 
